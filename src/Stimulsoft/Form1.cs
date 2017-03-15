@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Clinic.Core;
 using Dapper;
 using Stimulsoft.Report;
+using Stimulsoft.Report.Dictionary;
 
 namespace Stimulsoft
 {
@@ -23,7 +24,10 @@ namespace Stimulsoft
         private void button1_Click(object sender, EventArgs e)
         {
             var rpt = new StiReport();
-            rpt.Load("E:\\Aghazadeh\\My Projects\\Sample\\C#\\Stimulsoft\\Stimulsoft\\Reports\\Report.mrt");
+            rpt.Load($"{System.IO.Path.GetDirectoryName(Application.ExecutablePath)}\\Reports\\Report.mrt");
+            string CnnStr = Connections.data.ConnectionString;
+            rpt.Dictionary.Databases.Clear();
+            rpt.Dictionary.Databases.Add(new StiSqlDatabase("Connection", CnnStr));
             rpt["@InDate"] = "1395/01/01";
             rpt.Show();
         }
