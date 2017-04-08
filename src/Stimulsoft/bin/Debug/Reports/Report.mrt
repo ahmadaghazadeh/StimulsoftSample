@@ -12,11 +12,12 @@
     <DataSources isList="true" count="1">
       <sp_GetTest Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
         <Alias>sp_GetTest</Alias>
-        <Columns isList="true" count="4">
+        <Columns isList="true" count="5">
           <value>Id,System.Int32</value>
           <value>Name,System.String</value>
           <value>Qty,System.Int32</value>
           <value>Date,System.String</value>
+          <value>test,System.String</value>
         </Columns>
         <CommandTimeout>30</CommandTimeout>
         <Dictionary isRef="1" />
@@ -32,8 +33,10 @@
     <Relations isList="true" count="0" />
     <Report isRef="0" />
     <Resources isList="true" count="0" />
-    <Variables isList="true" count="1">
+    <Variables isList="true" count="3">
       <value>,_x0040_InDate,_x0040_InDate,,System.String,_x0031_395_x002F_01_x002F_05,False,False,False,False</value>
+      <value>,_x0040_Data,_x0040_Data,,System.String,asd,False,False,False,False</value>
+      <value>,Dataaa,Dataaa,,System.String,,False,False,False,False</value>
     </Variables>
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
@@ -43,7 +46,7 @@
     <Page1 Ref="4" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="5">
+      <Components isList="true" count="6">
         <Text2 Ref="5" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>2.8,10,0.6,0.2</ClientRectangle>
@@ -177,23 +180,7 @@
               <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Datasp_GetTest_Qty>
-            <Datasp_GetTest_Name Ref="15" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <CanGrow>True</CanGrow>
-              <ClientRectangle>4.5,0,1.5,0.3</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>B Nazanin,8</Font>
-              <Margins>0,0,0,0</Margins>
-              <Name>Datasp_GetTest_Name</Name>
-              <Page isRef="4" />
-              <Parent isRef="12" />
-              <Text>{sp_GetTest.Name}</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
-              <VertAlignment>Center</VertAlignment>
-            </Datasp_GetTest_Name>
-            <Datasp_GetTest_Id Ref="16" type="Text" isKey="true">
+            <Datasp_GetTest_Id Ref="15" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <CanGrow>True</CanGrow>
@@ -209,7 +196,7 @@
               <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Datasp_GetTest_Id>
-            <Text1 Ref="17" type="Text" isKey="true">
+            <Text1 Ref="16" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,0.6,0.3</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -221,6 +208,16 @@
               <Text>{Line}</Text>
               <TextBrush>Black</TextBrush>
             </Text1>
+            <RichText2 Ref="17" type="Stimulsoft.Report.Components.StiRichText" isKey="true">
+              <BackColor>White</BackColor>
+              <ClientRectangle>4.5,0,1.5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn>sp_GetTest.Name</DataColumn>
+              <Margins>0,0,0,0</Margins>
+              <Name>RichText2</Name>
+              <Page isRef="4" />
+              <Parent isRef="12" />
+            </RichText2>
           </Components>
           <Conditions isList="true" count="0" />
           <DataSourceName>sp_GetTest</DataSourceName>
@@ -298,6 +295,39 @@
           <Page isRef="4" />
           <Parent isRef="4" />
         </Footersp_GetTest>
+        <FooterBand1 Ref="23" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.3,7.72,5.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text5 Ref="24" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.7,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="23" />
+              <Text>{_InDate}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text5>
+            <RichText1 Ref="25" type="Stimulsoft.Report.Components.StiRichText" isKey="true">
+              <BackColor>White</BackColor>
+              <ClientRectangle>0.1,0.6,7.3,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn>sp_GetTest.Name</DataColumn>
+              <Margins>0,0,0,0</Margins>
+              <Name>RichText1</Name>
+              <Page isRef="4" />
+              <Parent isRef="23" />
+            </RichText1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>FooterBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </FooterBand1>
       </Components>
       <Conditions isList="true" count="0" />
       <Guid>2d8dcdc0ba1e45db9e9d2ea98633c9b5</Guid>
@@ -307,14 +337,14 @@
       <PageWidth>8.5</PageWidth>
       <PaperSize>Letter</PaperSize>
       <Report isRef="0" />
-      <Watermark Ref="23" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="26" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
   <PreviewSettings>268435455</PreviewSettings>
-  <PrinterSettings Ref="24" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="27" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -326,10 +356,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/15/2017 3:33:42 PM</ReportChanged>
+  <ReportChanged>4/8/2017 2:41:18 PM</ReportChanged>
   <ReportCreated>3/15/2017 1:37:33 PM</ReportCreated>
   <ReportFile>E:\Aghazadeh\My Projects\Sample\C#\StimulsoftSample\src\Stimulsoft\Reports\Report.mrt</ReportFile>
-  <ReportGuid>9de48289c4864a77b322c4bd3dc55d77</ReportGuid>
+  <ReportGuid>bd0c7716a5d449ffaf2153f5b6ac0307</ReportGuid>
   <ReportImage isNull="true" />
   <ReportName>Report</ReportName>
   <ReportUnit>Inches</ReportUnit>
